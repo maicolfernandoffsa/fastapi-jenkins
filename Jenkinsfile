@@ -1,5 +1,4 @@
 
-import sharedlib.FreeStyleJenkinsUtil
 import org.jenkinsci.plugins.docker.workflow.*
 import org.jenkinsci.plugins.workflow.steps.*
 
