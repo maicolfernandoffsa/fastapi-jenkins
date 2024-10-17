@@ -35,6 +35,7 @@ pipeline {
                     // Run tests on the correct service (adjust if necessary)
                     //sh ‘docker-compose exec -T wordpress /bin/bash -c “apt-get update && apt-get install -y maven && mvn test”‘
 
+                    sh 'apt-get update && apt-get install -y sudo'
                     sh 'sudo su'
                 
                     sh 'apt-get update'
