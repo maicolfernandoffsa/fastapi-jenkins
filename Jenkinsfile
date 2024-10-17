@@ -19,10 +19,10 @@ pipeline {
                     // Run tests on the correct service (adjust if necessary)
                     //sh ‘docker-compose exec -T wordpress /bin/bash -c “apt-get update && apt-get install -y maven && mvn test”‘
 
-                    sh 'sudo apt-get update'
-                    sh 'sudo apt-get install -y docker.io'
-                    sh 'sudo systemctl start docker'
-                    sh 'sudo systemctl enable docker'
+                    sh 'apt-get update'
+                    sh 'apt-get install -y docker.io'
+                    sh 'systemctl start docker'
+                    sh 'systemctl enable docker'
                 
                     sh 'docker build --tag "my-python-app"'
                 
