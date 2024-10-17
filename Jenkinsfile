@@ -1,13 +1,12 @@
 pipeline {
-
-
+    
     agent any
-
-
+    
     stages {
-        stage(‘Build and Test’) {
+        
+        stage('Build and Test') {
             steps {
-                dir(‘path/to/your/docker-compose-directory’) {
+                dir('Dockerfile') {
                     // Check the docker-compose version
                     //sh ‘docker-compose –version’
                     
@@ -24,25 +23,25 @@ pipeline {
                 }
             }
         }
-        stage(‘Deploy’) {
+        stage('Deploy') {
             when {
-                expression { currentBuild.result == null || currentBuild.result == ‘SUCCESS’ }
+                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
             }
             steps {
-                echo ‘Deploying…’
+                echo 'Deploying…'
                 // Add your deploy steps here
             }
         }
     }
     post {
         always {
-            echo ‘Post actions’
+            echo 'Post actions'
         }
         success {
-            echo ‘Pipeline completed successfully.’
+            echo 'Pipeline completed successfully.'
         }
         failure {
-            echo ‘Pipeline failed.’
+            echo 'Pipeline failed.'
         }
     }
 }
