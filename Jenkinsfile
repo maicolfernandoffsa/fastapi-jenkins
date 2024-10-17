@@ -19,12 +19,6 @@ pipeline {
     agent any
     
     stages {
-        
-        stage('Instalar Python') {
-                steps {
-                    sh 'sudo apt-get update && sudo apt-get install -y python3 python3-pip'
-                }
-            }
             stage('Instalar dependencias') {
                 steps {
                     sh 'pip3 install -r requirements.txt'
