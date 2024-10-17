@@ -1,4 +1,4 @@
-@Library('jenkins-sharedlib@master')
+
 import sharedlib.FreeStyleJenkinsUtil
 import org.jenkinsci.plugins.docker.workflow.*
 import sharedlib.helper.DockerHelper
