@@ -1,27 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Clone repository') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Build image') {
-            steps {
-                script {
-                    app = docker.build("narsimha2580/test")
-                }
-            }
-        }
-        stage('Test image') {
-            steps {
-                script {
-                    app.inside {
-                        sh 'echo "Tests passed"'
-                    }
-                }
-            }
-        }
+      
         stage('Push image') {
             steps {
                 script {
