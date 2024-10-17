@@ -15,14 +15,6 @@ def deploymentEnvironment   = "dev"
 def inputtext = params.INPUT_TEXT
 
 // Jira Server and Xray Server
-def jiraserver_url = "http://10.79.118.74:8080"
-
-// Jira Cloud
-def jiracloud_url = "https://bcp-ti-sandbox-995.atlassian.net"
-def jira_username = "erikmanchego@bcp.com.pe"
-
-// Xray Cloud
-def xraycloud_url = "https://xray.cloud.getxray.app/api/v2/graphql"
 
 private static final String DOCKER_PYTHON = "bcp/python39:2.0.0"
 pipeline {
