@@ -1,3 +1,30 @@
+@Library('jenkins-sharedlib@master')
+import sharedlib.FreeStyleJenkinsUtil
+import org.jenkinsci.plugins.docker.workflow.*
+import sharedlib.helper.DockerHelper
+import org.jenkinsci.plugins.workflow.steps.*
+
+def utils = new FreeStyleJenkinsUtil(this)
+/* Project settings */
+def project="INCT"
+/* Mail configuration*/
+// If recipients is null the mail is sent to the person who start the job
+// The mails should be separated by commas(',')
+def recipients              = ""
+def deploymentEnvironment   = "dev"
+def inputtext = params.INPUT_TEXT
+
+// Jira Server and Xray Server
+def jiraserver_url = "http://10.79.118.74:8080"
+
+// Jira Cloud
+def jiracloud_url = "https://bcp-ti-sandbox-995.atlassian.net"
+def jira_username = "erikmanchego@bcp.com.pe"
+
+// Xray Cloud
+def xraycloud_url = "https://xray.cloud.getxray.app/api/v2/graphql"
+
+private static final String DOCKER_PYTHON = "bcp/python39:2.0.0"
 pipeline {
     
     agent any
