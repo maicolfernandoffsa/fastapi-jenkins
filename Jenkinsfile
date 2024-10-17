@@ -6,7 +6,7 @@ pipeline {
         
         stage('Build and Test') {
             steps {
-                dir('./') {
+                dir('/Dockerfile') {
                     // Check the docker-compose version
                     //sh ‘docker-compose –version’
                     
