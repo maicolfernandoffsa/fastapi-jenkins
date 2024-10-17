@@ -16,16 +16,12 @@ def inputtext = params.INPUT_TEXT
 private static final String DOCKER_PYTHON = "bcp/python39:2.0.0"
 pipeline {
     
-    agent {
-      docker {
-        image 'python:3'
-        label 'my-build-agent'
-      }
-    }
+    agent any
     
     stages {
             stage('Instalar dependencias') {
                 steps {
+                    sh 'apt install python3 -y'
                     sh 'pip3 install -r requirements.txt'
                 }
             }
