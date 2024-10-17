@@ -1,7 +1,6 @@
 
 import sharedlib.FreeStyleJenkinsUtil
 import org.jenkinsci.plugins.docker.workflow.*
-import sharedlib.helper.DockerHelper
 import org.jenkinsci.plugins.workflow.steps.*
 
 def utils = new FreeStyleJenkinsUtil(this)
